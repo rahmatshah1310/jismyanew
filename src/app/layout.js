@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
-import './globals.css'
-import Header from '@/layouts/Header'
-import Footer from '@/layouts/Footer'
+import "./globals.css"
+import AuthLayout from './authlayout';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,6 +11,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <head>
@@ -20,9 +21,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Header />
-        <main className='bg-white'>{children}</main>
-        <Footer />
+        <AuthLayout>     <main className='bg-white'>{children}</main></AuthLayout>
       </body>
     </html>
   )
