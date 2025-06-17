@@ -11,7 +11,7 @@ export default function AuthLayout({ children }) {
     return (
         <>
             {!hideLayout && <Header />}
-            <main className="bg-white pt-[calc(100px+1rem)]">
+            <main className="bg-white">
                 {children}
             </main>
 
