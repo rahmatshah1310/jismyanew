@@ -1,9 +1,8 @@
-import { Inter } from 'next/font/google'
-import "./globals.css"
-import AuthLayout from './authlayout';
+import './globals.css'
+import AuthLayout from './authlayout'
+import Providers from './providers'
 
-
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: "Jismya.com - Premium Women's Undergarments",
@@ -11,7 +10,6 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-
   return (
     <html lang="en">
       <head>
@@ -20,8 +18,8 @@ export default function RootLayout({ children }) {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         />
       </head>
-      <body>
-        <AuthLayout>     <main className='bg-white'>{children}</main></AuthLayout>
+      <body >
+        <AuthLayout><Providers>{children}</Providers></AuthLayout>
       </body>
     </html>
   )
