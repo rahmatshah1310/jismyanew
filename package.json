@@ -6,11 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next build && next export"
+    "lint": "next lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "@tanstack/react-query": "^5.81.5",
+    "axios": "^1.9.0",
     "framer-motion": "^12.16.0",
     "next": "15.3.3",
     "react": "^19.0.0",
