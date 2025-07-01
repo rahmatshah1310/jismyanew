@@ -1,21 +1,21 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import Header from '@layouts/Header'
-import Footer from '@layouts/Footer'
+import Header from '@/layouts/Header'
+import Footer from '@/layouts/Footer'
 
 export default function AuthLayout({ children }) {
-    const pathname = usePathname()
-    const hideLayout = pathname === '/login' || pathname === '/register'
+  const pathname = usePathname()
 
-    return (
-        <>
-            {!hideLayout && <Header />}
-            <main className="bg-white">
-                {children}
-            </main>
+  const hideLayout = pathname === '/login' || pathname === '/register'
 
-            {!hideLayout && <Footer />}
-        </>
-    )
+  return (
+    <>
+      {!hideLayout && <Header />}
+      <main className={`bg-white ${!hideLayout ? 'mt-24' : ''}`}>
+        {children}
+      </main>
+      {!hideLayout && <Footer />}
+    </>
+  )
 }
