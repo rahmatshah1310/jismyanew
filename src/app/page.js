@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '@/components/ui/Button'
-import { slides, policy, products, category } from '@/constants/data'
+import { slides, policy, products, category, cartItems } from '@/constants/data'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
@@ -151,24 +151,25 @@ export default function Home() {
         <div className="container mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-[var(--color-pink-600)]">Featured Products</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            {products.map((product, index) => (
+            {cartItems.map((product, index) => (
               <div key={index} className="bg-[var(--color-white)] rounded-lg shadow-md overflow-hidden group hover:shadow-xl transition-shadow flex flex-col">
-                <div className="relative h-48 sm:h-64 md:h-80 w-full">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform rounded-t-lg"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  />
-                </div>
-                <div className="p-4 flex-1 flex flex-col justify-between">
-                  <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-[var(--color-gray-700)]">{product.name}</h3>
-                  <p className="text-[var(--color-pink-500)] font-bold mb-2 sm:mb-4 ">{product.price}</p>
-                  <button className="w-full bg-[var(--color-pink-500)] text-[var(--color-white)] py-2 rounded-md hover:bg-[var(--color-pink-600)] transition-colors text-sm sm:text-base">
-                    Add to Cart
-                  </button>
-                </div>
+                <Link href={`/cart/${product.id}`}>
+                  <div className="relative h-48 sm:h-64 md:h-80 w-full">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform rounded-t-lg"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
+                  </div>
+                  <div className="p-4 flex-1 flex flex-col justify-between">
+                    <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-[var(--color-gray-700)]">{product.name}</h3>
+                    <p className="text-[var(--color-pink-500)] font-bold mb-2 sm:mb-4 ">$ {product.price}</p>
+                    <button className="w-full bg-[var(--color-pink-500)] text-[var(--color-white)] py-2 rounded-md hover:bg-[var(--color-pink-600)] transition-colors text-sm sm:text-base">
+                      Add to Cart
+                    </button>
+                  </div></Link>
               </div>
             ))}
           </div>
