@@ -1,11 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-//first newcomment
 
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white pt-20 pb-6">
+        <footer className="bg-[#040F28] text-white pt-20 pb-6">
             <div className="container mx-auto px-5">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     <div>
