@@ -1,6 +1,7 @@
 import './globals.css'
 import AuthLayout from './authlayout'
 import Providers from './providers'
+import { AuthProvider } from '@/context/AuthContext'
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -18,8 +19,8 @@ export default function RootLayout({ children }) {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         />
       </head>
-      <body >
-        <AuthLayout><Providers>{children}</Providers></AuthLayout>
+      <body>
+        <AuthProvider><AuthLayout><Providers>{children}</Providers></AuthLayout></AuthProvider>
       </body>
     </html>
   )
