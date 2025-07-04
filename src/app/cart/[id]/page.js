@@ -57,7 +57,7 @@ export default function SingleCartItem() {
             <Image
               src={cartItem.image}
               alt={cartItem.name}
-              width={700}
+              width={300}
               height={300}
               className="rounded object-cover w-full h-full bg-[var(--color-gray-100)]"
             />
