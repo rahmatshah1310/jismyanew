@@ -52,7 +52,7 @@ export default function SingleCartItem() {
   return (
     <main className="py-12 px-4">
       <div className="rounded-lg md:p-6 p-2.5">
-        <div className="flex flex-col md:flex-row gap-8 mx-auto md:max-w-[45%] min-w[100%] bg-[var(--color-gray-50)] shadow-md p-2">
+        <div className="flex flex-col md:flex-row gap-8 mx-auto md:max-w-[43%] min-w[100%] bg-[var(--color-gray-50)] shadow-md p-2">
           <div className="flex-shrink-0 flex justify-center items-center ">
             <Image
               src={cartItem.image}
