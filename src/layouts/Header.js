@@ -57,7 +57,7 @@ const Header = () => {
             {/* Mobile Menu */}
             {menuOpen && (
                 <div className="fixed top-12 right-0 md:hidden bg-amber-50 shadow-lg px-5 py-4 space-y-4 w-36 z-50">
-                    <Link href="home" className="block text-pink-500 hover:text-pink-700 transition-colors">Home</Link>
+                    <Link href="/" className="block text-pink-500 hover:text-pink-700 transition-colors">Home</Link>
                     <Link href="categories" className="block text-pink-500 hover:text-pink-700 transition-colors">Categories</Link>
                     <Link href="new-arrivals" className="block text-pink-500 hover:text-pink-700 transition-colors">New Arrivals</Link>
                     <Link href="sale" className="block text-pink-500 hover:text-pink-700 transition-colors">Sale</Link>
